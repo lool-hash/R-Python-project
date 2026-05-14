@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'fastapi_app'
+    static_configs:
+      # host.docker.internal works for Windows/Mac to reach the uvicorn host network
+      - targets: ['api:8000']
